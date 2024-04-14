@@ -1,0 +1,29 @@
+import { Button, HorizontalBox, VerticalBox } from "std-widgets.slint";
+export component AppWindow inherits Window {
+    callback run-server();
+    callback run-client();
+    width: 200px;
+    height: 300px;
+    HorizontalBox {
+        alignment: center;
+        VerticalBox {
+        alignment: center;
+        Button {
+            width: 120px;
+            height: 50px;
+            text: "Создать сервер";
+            clicked => {
+                root.run-server()
+            }
+        }
+        Button {
+            width: 120px;
+            height: 50px;
+            text: "Подключиться";
+            clicked => {
+                root.run-client()
+            }
+        }
+    }
+    }    
+}
